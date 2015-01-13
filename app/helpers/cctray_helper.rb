@@ -1,0 +1,2 @@
+module CctrayHelper
+end
