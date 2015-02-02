@@ -36,6 +36,8 @@ gem 'her', '~> 0.7'
 gem 'faraday_middleware'
 gem 'rails_config', '~> 0.2'
 gem 'js-routes', '~> 1.0'
+gem 'backbone-on-rails', '~> 1.1'
+gem 'momentjs-rails', '~> 2.9'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
