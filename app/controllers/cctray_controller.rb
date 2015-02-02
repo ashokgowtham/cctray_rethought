@@ -2,7 +2,7 @@ class CctrayController < ApplicationController
   
   def view
   	if request.xhr?
-  		render_json CctrayService.cctray
+  		render json: CctrayService.cctray
 	else
 		render :view
   	end

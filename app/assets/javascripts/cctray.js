@@ -1,3 +1,7 @@
+$(function() {
+	var projects = new App.Collections.Projects();
+	var cctrayView = new App.Views.ProjectsView({model: projects, el: '.main-view'});
 
-var url = cctray_path();
-$.ajax(url)
+	projects.fetch({success:cctrayView.render});
+	
+});

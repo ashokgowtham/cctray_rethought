@@ -13,5 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require underscore
+//= require backbone
+//= require js-routes
 //= require moment
+//= require cctray_rethought
+//= require_tree ../templates
+//= require_tree ./cctray/models
+//= require_tree ./cctray/collections
+//= require_tree ./cctray/templates
+//= require_tree ./cctray/views
+//= require_tree ./cctray
+//= require cctray

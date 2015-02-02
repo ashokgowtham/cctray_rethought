@@ -5,7 +5,7 @@ class CctrayService
   class << self
 
     def cctray
-      Hash.from_xml(get('go/cctray.xml')).to_json
+      Hash.from_xml(get('go/cctray.xml'))['Projects']['Project']
     end
 
     def get(url, params={})

@@ -1,0 +1,13 @@
+
+<div class="build <%= model.getClasses() %>" data-url='<%= model.get('webUrl') %>'>
+	<span class='serial-number <%= model.isFailing()? "failing": "passing" %>'><%= model.get('serialNumber') %></span><!--
+	--><span class='name'><%=model.getName()%></span>
+	<div class='tags'>
+		<span class='tag timeSinceLastBuild'><%=model.getTimeSinceLastBuild()%></span>
+		<span class='tag breaker'><%=model.getBreaker()%></span>
+		<% var retriggerCount = model.getRetriggerCount() %>
+		<% if(retriggerCount && retriggerCount>1) { %>
+		<span class='tag retriggered'><%=model.getRetriggerCount()%></span>
+		<% } %>
+	</div>
+</div>

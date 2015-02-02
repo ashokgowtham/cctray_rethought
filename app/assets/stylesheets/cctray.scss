@@ -1,3 +1,83 @@
 // Place all the styles related to the cctray controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color:white;
+    font-size:3em;
+    font-weight:bold;
+    font-family:'courier new'
+}
+
+.build {
+    margin:2px;
+    padding:20px;
+    border-radius:5px;
+    background:blue;
+    position:relative;
+}
+
+.failing {
+    background:red;
+}
+
+.passing {
+    background:green;
+}
+
+.building {
+    background:#C90;
+}
+
+.tags {
+    position:absolute;
+    right:0px;
+    top:0px;
+    bottom:0px;
+    margin: auto;
+    height:54px;
+}
+
+.tag {
+    border-radius:5px;
+    margin:auto 5px;
+    float: right;
+    background: pink;
+}
+
+.breaker {
+    display:none;
+    background:#ff7;
+    color:red;
+}
+
+.failing .breaker {
+    display:block;
+}
+
+.retriggered {
+    width:50px;
+    height:50px;
+    border-radius:50px;
+    text-align:center;
+    background:purple;   
+}
+
+.serial-number {
+    border-radius:10px;
+    padding: 0 10px;
+    margin: 0 10px 0 0;
+
+    &.failing {
+        background: red;
+    }
+    &.passing {
+        background: green;
+    }
+}
+
