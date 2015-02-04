@@ -71,9 +71,17 @@ App.Models.Project = Backbone.Model.extend({
 		var match = this.get('webUrl').match(/Build\/([0-9]+)/);
 		return match ? match[1] : 0;
 	},
-	getTimeSinceLastBuild: function() {
-		return moment(this.getLastBuildTime(),'YYYY-MM-DD[T]hh:mm:ss').add(4.5, 'hours').fromNow();	//TODO: separate out the server timezone
+	fromNow: function() {
+		return moment(this.getLastBuildTime(),'YYYY-MM-DD[T]hh:mm:ss').add(4.5, 'hours').fromNow(true);	//TODO: separate out the server timezone
 	},
+
+    getTimeSinceLastBuild: function() {
+        var timeSinceLastBuild2 = this.fromNow().split(' ');
+        var timeSinceLastBuild = timeSinceLastBuild2[0];
+        if(_.contains(['a', 'an'], timeSinceLastBuild)) timeSinceLastBuild = 1;
+        return [timeSinceLastBuild,timeSinceLastBuild2[1][0].toUpperCase()].join('');
+    },
+
 	getName: function() {
 		return this.get('name').split(' :: ')[0];
 	},
