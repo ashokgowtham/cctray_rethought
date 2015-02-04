@@ -2,6 +2,10 @@ $(function() {
 	var projects = new App.Collections.Projects();
 	var cctrayView = new App.Views.ProjectsView({model: projects, el: '.main-view'});
 
-	projects.fetch({success:cctrayView.render});
-	
+	var showData = function() {
+		projects.fetch({success:cctrayView.render});
+	};
+
+	setInterval(showData,10000);
+	showData();
 });

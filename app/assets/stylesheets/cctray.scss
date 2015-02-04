@@ -9,7 +9,7 @@
 
 body {
     color:white;
-    font-size:3em;
+    font-size:3.3em;
     font-weight:bold;
     font-family:'courier new'
 }
@@ -23,7 +23,7 @@ body {
 }
 
 .failing {
-    background:red;
+    background:#b00;
 }
 
 .passing {
@@ -45,17 +45,22 @@ body {
 
 .tag {
     border-radius:5px;
-    margin:auto 5px;
+    margin:auto 10px;
     float: right;
-    background: pink;
+    background: rgba(0,0,0,0.3);
+    padding: 0 15px;
 }
 
 .breaker {
     display:none;
-    background:#ff7;
-    color:red;
-}
+/*     background:#ff7; */
+    color:white;
 
+}
+.timeSinceLastBuild {
+    font-size:24px;
+    margin:14px;
+}
 .failing .breaker {
     display:block;
 }
@@ -73,11 +78,13 @@ body {
     padding: 0 10px;
     margin: 0 10px 0 0;
 
-    &.failing {
-        background: red;
-    }
-    &.passing {
-        background: green;
-    }
+}
+
+.serial-number.failing {
+    background: #b00;
+}
+
+.serial-number.passing {
+    background: green;
 }
 

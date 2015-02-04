@@ -39,18 +39,19 @@ App.Models.Project = Backbone.Model.extend({
 			'Simon' : 'Mr. Simone',
 			'Dhivya' : '[DD]',
 			'Ashok Gowtham' : 'Mr. Go',
-			'Ginette Vellera' : 'Ginette, "The Cook"',
+			'Ginette Vellera' : 'Ginette, "The Master Chef"',
 			'Aswin Karthik S' : 'Ashwayne',
 			'Raghavan' : 'Bruce Wayne',
 			'P S Saravanan' : 'Drunken Monkey',
 			'Vijayaragavan' : 'The "Star"',
 			'Christopher' : 'Krish',
 			'tsathishkumar' : 'Thala',
+			'ajitsingh' : 'Mr. Singh',
 		}
 		if(name in aliases) {
 			name = aliases[name];
 		}
-		return (name || this.randomCurse()) + ' broke it!';
+		return (name || this.randomCurse()) + '';
 	},
 	getGoodName: function(messages) {
 		name = messages ? messages.message.text : '';
@@ -58,9 +59,7 @@ App.Models.Project = Backbone.Model.extend({
 	},
 	randomCurse: function() {
 		var curses = [
-			"Headless developer",
-			"Some brainless person",
-			"A Useless fellow"
+			"Some one broke it",
 		];
 		var curseIndex = Math.floor((Math.random() * curses.length));
 		return curses[curseIndex];
