@@ -47,7 +47,8 @@ App.Models.Project = Backbone.Model.extend({
 			'Christopher' : 'Krish',
 			'tsathishkumar' : 'Thala',
 			'ajitsingh' : 'Mr. Singh',
-		}
+            'Lenin': 'DuggOut.com'
+		};
 		if(name in aliases) {
 			name = aliases[name];
 		}
