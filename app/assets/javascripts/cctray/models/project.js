@@ -43,7 +43,7 @@ App.Models.Project = Backbone.Model.extend({
 			'Aswin Karthik S' : 'Ashwayne',
 			'Raghavan' : 'Bruce Wayne',
 			'P S Saravanan' : 'Drunken Monkey',
-			'Vijayaragavan' : 'The "Star"',
+			'Vijayaragavan' : 'VJ',
 			'Christopher' : 'Krish',
 			'tsathishkumar' : 'Thala',
 			'ajitsingh' : 'Mr. Singh',
