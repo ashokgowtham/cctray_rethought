@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require underscore
+//= require lodash
 //= require backbone
 //= require js-routes
 //= require moment
