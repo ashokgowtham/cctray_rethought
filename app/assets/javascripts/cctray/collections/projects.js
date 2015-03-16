@@ -19,7 +19,12 @@ App.Collections.Projects = Backbone.Collection.extend({
 								return model.get('name').split(' :: ')[0];
 							}
 						), function(group, key, collection) {
-							return group[0];
+							var interestedJob = 
+							_.where(group,function(model){return model.isFailing();}) || 
+							_.where(group,function(model){return model.isRunning();}) ||
+							group;
+
+							return interestedJob[0];
 						});
 		result = result.sort(function(model1, model2) {
 			var diff = model2.getPriorityIndex() - model1.getPriorityIndex();
