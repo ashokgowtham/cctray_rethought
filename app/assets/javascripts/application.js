@@ -18,6 +18,7 @@
 //= require js-routes
 //= require moment
 //= require cctray_rethought
+//= require_tree ../templates
 //= require_tree ./cctray/models
 //= require_tree ./cctray/collections
 //= require_tree ./cctray/templates
