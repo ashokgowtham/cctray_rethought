@@ -38,7 +38,7 @@ App.Collections.Projects = Backbone.Collection.extend({
 			result[i].set('serialNumber',count.failing - i);
 		};
 		for (var i = count.failing; i < result.length; i++) {
-			result[i].set('serialNumber', result.length - i - count.failing);
+			result[i].set('serialNumber', result.length - i);
 		};
 		return result;
 	},
