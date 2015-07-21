@@ -36,18 +36,15 @@ App.Models.Project = Backbone.Model.extend({
 	getAlias: function(name) {
 		var aliases = {
 			'Varadharajan Mukundan' : '[V]',
-			'Simon' : 'Mr. Simone',
 			'Dhivya' : '[DD]',
 			'Ashok Gowtham' : 'Mr. Go',
 			'Ginette Vellera' : 'Ginette, "The Master Chef"',
 			'Aswin Karthik S' : 'Ashwayne',
 			'Raghavan' : 'Bruce Wayne',
-			'P S Saravanan' : 'Drunken Monkey',
+			'P S Saravanan' : 'Saravanan',
 			'Vijayaragavan' : 'VJ',
-			'Christopher' : 'Krish',
-			'tsathishkumar' : 'Thala',
-			'ajitsingh' : 'Mr. Singh',
-            'Lenin': 'DuggOut.com'
+			'Christopher' : 'Cris',
+			'tsathishkumar' : 'Sathish'
 		};
 		if(name in aliases) {
 			name = aliases[name];
