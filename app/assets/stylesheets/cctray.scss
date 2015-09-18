@@ -23,6 +23,28 @@ a {
     color: inherit;
 }
 
+.messages {
+    background: red;
+}
+
+.builds-container {
+    overflow: auto;
+    position: relative;
+}
+
+.builds-container:after {
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0);
+}
+.error+.builds-container:after {
+    background:rgba(0,0,0,0.5);
+}
+
 .build {
     margin:2px;
     padding:20px;

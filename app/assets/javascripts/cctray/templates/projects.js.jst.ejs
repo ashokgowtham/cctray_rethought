@@ -1,1 +1,11 @@
-
+<div class="messages <%= messages?'error':'' %>">
+    <% if(messages) { %>
+        <% _.each(messages, function(msg){ %>
+            <div class="message">
+                <%= msg %>
+            </div>
+        <% }); %>
+    <% } %>
+</div><div class="builds-container">
+    <%= projects %>
+</div>

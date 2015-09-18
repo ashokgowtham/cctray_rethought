@@ -6,7 +6,11 @@ $(function() {
         projects.fetch({
             success: function() {
                 cctrayView.render();
-                setTimeout(showData,10000)
+                setTimeout(showData,10000);
+            },
+            error: function () {
+                cctrayView.showError("Fetch failed");
+                setTimeout(showData,10000);
             }
        });
     };
