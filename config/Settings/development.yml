@@ -1,2 +1,13 @@
 urls:
     cctray: "http://y-ci-master.dnspam/"
+
+projects:
+    - "Merchandise_Service"
+    - "Demand_Pricing_Service"
+    - "Demand_Coefficient_Calculator"
+    - "Pricing_App"
+    - "Pricing_App_Stub_Verifier"
+    - "Pricing_App_Functional_Test"
+    - "Pricing_App_End_to_End"
+    - "Pricing_Service_Stub_Verifier"
+    - "Price_Config_Service"
