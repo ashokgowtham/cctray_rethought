@@ -14,7 +14,6 @@ projects:
     - Merchandise_App
     - Merchandise_App_Functional_Test
     - Merchandise_App_Stub_Verifier
-    - End_to_End_Testing
     - Analytics
     - Merchandise_Service_Stub_Verifier
     - Cost_Service
