@@ -1,7 +1,7 @@
 
 <div class="build <%= model.getClasses() %>" data-url='<%= model.get('webUrl') %>'>
 	<span class='serial-number <%= model.isFailing()? "failing": "passing" %>'><%= model.get('serialNumber') %></span><!--
-	--><a href="<%= model.get('webUrl') %>"><span class='name'><%=model.getName()%></span></a>
+	--><a href="<%= model.get('webUrl') %>" target="_blank"><span class='name'><%=model.getName()%></span></a>
 	<div class='tags'>
 		<span class='tag timeSinceLastBuild'><%=model.getTimeSinceLastBuild()%></span>
 		<span class='tag breaker'><%=model.getBreaker()%></span>
