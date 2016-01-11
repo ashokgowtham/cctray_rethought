@@ -9,7 +9,7 @@
 
 body {
     color:white;
-    font-size:3.3em;
+    font-size:1.6em;
     font-weight:bold;
     font-family:'courier new'
 }
@@ -48,8 +48,8 @@ a {
 
 .build {
     margin:2px;
-    padding:20px;
-    border-radius:5px;
+    padding:10px;
+    border-radius:4px;
     background:blue;
     position:relative;
 }
@@ -72,15 +72,15 @@ a {
     top:0px;
     bottom:0px;
     margin: auto;
-    height:54px;
+    height:26px;
 }
 
 .tag {
     border-radius:5px;
-    margin:auto 10px;
+    margin:auto 5px;
     float: right;
     background: rgba(0,0,0,0.3);
-    padding: 0 15px;
+    padding: 0 10px;
 }
 
 .breaker {
@@ -95,17 +95,17 @@ a {
 }
 
 .retriggered {
-    width:50px;
-    height:50px;
-    border-radius:50px;
+    width:25px;
+    height:25px;
+    border-radius:25px;
     text-align:center;
     background:purple;   
 }
 
 .serial-number {
-    border-radius:10px;
-    padding: 0 10px;
-    margin: 0 10px 0 0;
+    border-radius:5px;
+    padding: 0 5px;
+    margin: 0 5px 0 0;
 
 }
 
@@ -123,7 +123,7 @@ a {
     background-position: 0 0;
   }
   to {
-    background-position: 60px 60px;
+    background-position: 30px 30px;
   }
 }
 @keyframes progress {
@@ -131,7 +131,7 @@ a {
     background-position: 0 0;
   }
   to {
-    background-position: 60px 60px;
+    background-position: 30px 30px;
   }
 }
 
@@ -142,7 +142,7 @@ a {
 
 .build.building {
 
-    background-size:60px 60px;
+    background-size:30px 30px;
     background-image: linear-gradient(135deg, 
         rgba(0,0,0,0.05) 0%,
         rgba(0,0,0,0.05) 25%,
