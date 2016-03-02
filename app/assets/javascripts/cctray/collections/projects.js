@@ -15,17 +15,19 @@ App.Collections.Projects = Backbone.Collection.extend({
 			if(x===y) return 0;
 			return x>y ? 1 : -1;
 		};
-		var result = _.map(_.groupBy(this.models, function(model) {
-								return model.get('name').split(' :: ')[0];
-							}
-						), function(group, key, collection) {
-							var interestedJob = 
-							_.where(group,function(model){return model.isFailing();}) || 
-							_.where(group,function(model){return model.isRunning();}) ||
-							group;
-
-							return interestedJob[0];
-						});
+		var pipeline_stages = _.filter(this.models, function(model) {
+			return model.get('name').split(' :: ').length<=2;
+		});
+		var pipelines = _.groupBy(pipeline_stages, function(model) {
+			return model.get('name').split(' :: ')[0];
+		});
+		var result = _.map(pipelines, function(group, key, collection) {
+			var interestedJob =
+				_.filter(group,function(model){return model.isFailing();}).concat(
+				_.filter(group,function(model){return model.isBuilding();}),
+				group);
+			return interestedJob[0];
+		});
 		result = result.sort(function(model1, model2) {
 			var diff = model2.getPriorityIndex() - model1.getPriorityIndex();
 			if (!diff) {
@@ -45,8 +47,8 @@ App.Collections.Projects = Backbone.Collection.extend({
 
 	getFailingBuildsSortedByRecentlyFailed: function() {
 		_.chain(this.models)
-			.where(function (model) { return model.isFailing(); })
-			.where(function (model) { return model.isSleeping(); })
+			.filter(function (model) { return model.isFailing(); })
+			.filter(function (model) { return model.isSleeping(); })
 			.sortBy('lastBuildTime')
 			.reverse()
 			.value();
@@ -54,8 +56,8 @@ App.Collections.Projects = Backbone.Collection.extend({
 
 	getRunningBuilds: function() {
 		_.chain(this.models)
-			.where(function (model) { return model.isFailing(); })
-			.where(function (model) { return model.isBuilding(); })
+			.filter(function (model) { return model.isFailing(); })
+			.filter(function (model) { return model.isBuilding(); })
 			.sortBy('lastBuildTime')
 			.reverse()
 			.value();		
