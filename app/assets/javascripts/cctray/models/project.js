@@ -66,7 +66,7 @@ App.Models.Project = Backbone.Model.extend({
 		return this.isFailing() ? (this.getGoodName(this.get('messages'))) : '';
 	},
 	getRetriggerCount: function() {
-		var match = this.get('webUrl').match(/Build\/([0-9]+)/);
+		var match = this.get('webUrl').match(/\/([0-9]+)$/);
 		return match ? match[1] : 0;
 	},
 	getTimeSinceLastBuild: function() {
