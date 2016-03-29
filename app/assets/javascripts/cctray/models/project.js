@@ -70,7 +70,7 @@ App.Models.Project = Backbone.Model.extend({
 		return match ? match[1] : 0;
 	},
 	getTimeSinceLastBuild: function() {
-		return moment(this.getLastBuildTime(),'YYYY-MM-DD[T]hh:mm:ss').add(4.5, 'hours').fromNow();	//TODO: separate out the server timezone
+		return moment(this.getLastBuildTime(),'YYYY-MM-DD[T]hh:mm:ss').add(3.5, 'hours').fromNow();	//TODO: separate out the server timezone
 	},
 	getName: function() {
 		return this.get('name').split(' :: ')[0];
