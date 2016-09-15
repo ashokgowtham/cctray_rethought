@@ -15,8 +15,13 @@ App.Collections.Projects = Backbone.Collection.extend({
 			if(x===y) return 0;
 			return x>y ? 1 : -1;
 		};
+		var include_regex = localStorage["include"];
+		var exclude_regex = localStorage["exclude"];
+		include_regex = include_regex && new RegExp(include_regex,"i");
+		exclude_regex = exclude_regex && new RegExp(exclude_regex,"i");
 		var pipeline_stages = _.filter(this.models, function(model) {
-			return model.get('name').split(' :: ').length<=2;
+			var pipeline_name_parts = model.get('name').split(' :: ');
+			return pipeline_name_parts.length<=2 && (!include_regex || include_regex.test(pipeline_name_parts)) && (!exclude_regex || !exclude_regex.test(pipeline_name_parts));
 		});
 		var pipelines = _.groupBy(pipeline_stages, function(model) {
 			return model.get('name').split(' :: ')[0];
